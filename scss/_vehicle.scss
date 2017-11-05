@@ -1,0 +1,41 @@
+.middle_container {
+	width: 50%;
+	position: relative;
+	background: #A5ABC6;
+	.middle_container_background {
+		height: 100%;
+		background: url('../img/background.jpg') no-repeat bottom;
+		background-size: contain;
+	}
+	.space_craft {
+		position: absolute;
+		top: 68%;
+		left: 35%;
+		width: 30%;
+		height: 7rem;
+		background: url('../img/apolloEleven.svg');
+	}
+}
+.button_container {
+	width: 100%;
+	position: absolute;
+	padding: 0 .5rem;
+	top: 50%;
+	display: flex;
+	justify-content: space-between;
+	#left_selection, #right_selection {
+		border-radius: 50%;
+		height: 5rem;
+		width: 5rem;
+		border: 2px outset light-gray;
+		.fa {
+			color: white;
+		}
+	}
+}
+#left_selection {
+	background: url('../img/mars.svg');
+}
+#right_selection {
+	background: url('../img/jupiter.svg');
+}

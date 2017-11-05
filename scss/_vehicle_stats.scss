@@ -1,0 +1,23 @@
+.left_container {
+	height: 35rem;
+	width: 25%;
+	color: white;
+	#rocket_info, #rocket_seats {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-between;
+		.space_craft_info_list, .seats_info_list {
+			border: 1px solid white;
+			padding: .5rem;
+			text-align: left;
+		}
+	}
+}
+.rocket_info_header, .rocket_seats_header {
+	background: #231445;
+	margin: 0;
+	padding: .5rem;
+}

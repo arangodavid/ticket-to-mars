@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAiB;EAChB,KAAK,EAAE,GAAG",
+"sources": ["../scss/buy_tickets.scss"],
+"names": [],
+"file": "buy_tickets.css"
+}

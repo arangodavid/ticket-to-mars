@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 15px; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+.root {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  margin: 0 auto;
+  background: #7C2143;
+  padding: 5rem .25rem 0;
+  border-radius: 2rem; }
+
+.left_container {
+  height: 35rem;
+  width: 25%;
+  color: white; }
+  .left_container #rocket_info, .left_container #rocket_seats {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between; }
+    .left_container #rocket_info .space_craft_info_list, .left_container #rocket_info .seats_info_list, .left_container #rocket_seats .space_craft_info_list, .left_container #rocket_seats .seats_info_list {
+      border: 1px solid white;
+      padding: .5rem;
+      text-align: left; }
+
+.rocket_info_header, .rocket_seats_header {
+  background: #231445;
+  margin: 0;
+  padding: .5rem; }
+
+.middle_container {
+  width: 50%;
+  position: relative;
+  background: #A5ABC6; }
+  .middle_container .middle_container_background {
+    height: 100%;
+    background: url("../img/background.jpg") no-repeat bottom;
+    background-size: contain; }
+  .middle_container .space_craft {
+    position: absolute;
+    top: 68%;
+    left: 35%;
+    width: 30%;
+    height: 7rem;
+    background: url("../img/apolloEleven.svg"); }
+
+.button_container {
+  width: 100%;
+  position: absolute;
+  padding: 0 .5rem;
+  top: 50%;
+  display: flex;
+  justify-content: space-between; }
+  .button_container #left_selection, .button_container #right_selection {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    border: 2px outset light-gray; }
+    .button_container #left_selection .fa, .button_container #right_selection .fa {
+      color: white; }
+
+#left_selection {
+  background: url("../img/mars.svg"); }
+
+#right_selection {
+  background: url("../img/jupiter.svg"); }
+
+.right_container {
+  width: 25%; }
+
+/*# sourceMappingURL=style.css.map */
