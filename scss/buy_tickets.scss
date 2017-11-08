@@ -17,10 +17,16 @@
 	}
 	.total_price {
 		border: 1px solid white;
-		height: 9rem;
+		height: 14rem;
+		padding: 0;
 	}
 	.purchase_button {
 		display: block;
 		margin: 0 auto;
 	}
+}
+.total_price_info {
+	border: 1px solid white;
+	list-style-type: none;
+	padding: .5rem;
 }

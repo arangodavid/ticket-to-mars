@@ -193,37 +193,41 @@ class Ticket {
 	print(numOfChild, numOfAdult, numOfSenior, numOfPet, type) {
 		//Apollo variables
 		// Child price variables
-		let childDiscount = 75;
-		let childProduct = type * childDiscount;
-		let childAmountSaved = childProduct / 100;
-		let childTotalSaved = childAmountSaved * numOfChild
-		let childSum = type - childAmountSaved;
-		let childTotal = childSum * numOfChild;
+		const childDiscount = 75;
+		const childProduct = type * childDiscount;
+		const childAmountSaved = childProduct / 100;
+		const childTotalSaved = childAmountSaved * numOfChild
+		const childSum = type - childAmountSaved;
+		const childTotal = childSum * numOfChild;
 		// Adult price variables
-		let adultTotal = type * numOfAdult;
+		const adultTotal = type * numOfAdult;
 		// Senior price variables
-		let seniorDiscount = 15;
-		let seniorProduct = type * seniorDiscount;
-		let seniorAmountSaved = seniorProduct / 100;
-		let seniorTotalSaved = seniorAmountSaved * numOfSenior;
-		let seniorSum = type - seniorAmountSaved;
-		let seniorTotal = seniorSum * numOfSenior;
+		const seniorDiscount = 15;
+		const seniorProduct = type * seniorDiscount;
+		const seniorAmountSaved = seniorProduct / 100;
+		const seniorTotalSaved = seniorAmountSaved * numOfSenior;
+		const seniorSum = type - seniorAmountSaved;
+		const seniorTotal = seniorSum * numOfSenior;
 		// Pet price variables
-		let petTotal = type * numOfPet;
+		const petTotal = type * numOfPet;
+
+		const grandTotal = childTotal + adultTotal + petTotal;
 
 			total.innerHTML = `
-				<li> Children(${numOfChild}): $${childTotal} - You Saved $${childTotalSaved}! </li>
-				<li> Adults(${numOfAdult}): $${adultTotal}</li>
-				<li> Seniors(${numOfSenior}): $${seniorTotal} - You Saved $${seniorTotalSaved}! </li>
-				<li> Pets(${numOfPet}): $${petTotal}</li>`;
+				<li class="total_price_info"> Children(${numOfChild}): $${childTotal} - You Saved $${childTotalSaved}! </li>
+				<li class="total_price_info"> Adults(${numOfAdult}): $${adultTotal}</li>
+				<li class="total_price_info"> Seniors(${numOfSenior}): $${seniorTotal} - You Saved $${seniorTotalSaved}! </li>
+				<li class="total_price_info"> Pets(${numOfPet}): $${petTotal}</li>
+				<li class="total_price_info"> ${numOfChild} Children, ${numOfAdult} Adults, ${numOfSenior} Seniors, ${numOfPet} Pets</li>
+				<li class="total_price_info"> Grand Total: $${grandTotal}</li>`;
 	}
 }
-let submitButton = document.getElementById('submit');
+const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', () => {
-	let numOfChild = document.getElementById('child').value;
-	let numOfAdult = document.getElementById('adult').value;
-	let numOfSenior = document.getElementById('senior').value;
-	let numOfPet = document.getElementById('pet').value;
+	const numOfChild = document.getElementById('child').value;
+	const numOfAdult = document.getElementById('adult').value;
+	const numOfSenior = document.getElementById('senior').value;
+	const numOfPet = document.getElementById('pet').value;
 	const ticket = new Ticket();
 	ticket.ticketPrice(numOfChild, numOfAdult, numOfSenior, numOfPet);	
 });
