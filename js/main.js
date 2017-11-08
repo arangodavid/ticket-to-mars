@@ -187,7 +187,7 @@ class Ticket {
 			type = 10000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
 		}else {
-
+			console.log(vehicle.src);
 		}
 	}
 	print(numOfChild, numOfAdult, numOfSenior, numOfPet, type) {
