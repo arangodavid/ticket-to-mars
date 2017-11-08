@@ -1,3 +1,26 @@
 .right_container {
 	width: 25%;
+	padding: .25rem;
+	.ticket_container {
+		border: 1px solid white;
+		.ticket_info {
+			width: 100%;
+		}
+	}
+	
+}
+.ticket_total_container {
+	border: 1px solid white;
+	.ticket_total_header {
+		margin: 0;
+		text-align: center;
+	}
+	.total_price {
+		border: 1px solid white;
+		height: 9rem;
+	}
+	.purchase_button {
+		display: block;
+		margin: 0 auto;
+	}
 }
