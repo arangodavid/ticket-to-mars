@@ -13,9 +13,15 @@
     text-align: center; }
   .ticket_total_container .total_price {
     border: 1px solid white;
-    height: 9rem; }
+    height: 14rem;
+    padding: 0; }
   .ticket_total_container .purchase_button {
     display: block;
     margin: 0 auto; }
+
+.total_price_info {
+  border: 1px solid white;
+  list-style-type: none;
+  padding: .5rem; }
 
 /*# sourceMappingURL=buy_tickets.css.map */
