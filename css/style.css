@@ -106,7 +106,7 @@ body {
     text-align: center; }
   .ticket_total_container .total_price {
     border: 1px solid white;
-    height: 14rem;
+    height: 16rem;
     padding: 0; }
   .ticket_total_container .purchase_button {
     display: block;
