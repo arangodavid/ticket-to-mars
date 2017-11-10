@@ -2,33 +2,53 @@
   box-sizing: border-box; }
 
 html {
+  font-family: 'Syncopate', sans-serif;
   font-size: 15px; }
 
 body {
   padding: 0;
   margin: 0;
-  padding-top: 5rem; }
-
-.root {
+  padding-top: 5rem;
+  background: #171D3C url("../img/test11.gif") no-repeat top right;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 29%;
-  margin: 0 auto;
-  color: white;
-  font-size: .9rem;
-  padding: 2rem 1rem;
-  border-radius: .5rem;
-  background: linear-gradient(#A6ACC7, #221344); }
-  .root .rocket_container {
-    background: #7C2143;
-    width: 100%;
-    height: 100%;
+  flex-direction: row; }
+  body .intro {
+    border: 1px solid white;
+    width: 20%;
+    transform: translate(20%, 0); }
+  body .root {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    position: relative;
-    overflow: hidden; }
+    width: 29%;
+    transform: translate(45.5%, 0);
+    color: white;
+    font-size: .8rem;
+    padding: 2rem 1rem;
+    border-radius: .5rem;
+    background: linear-gradient(#A6ACC7, #221344);
+    box-shadow: 0 0 .5rem #FFF881; }
+    body .root .rocket_container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      position: relative;
+      overflow: hidden; }
+
+.intro_header {
+  border: 1px solid white;
+  margin: 0;
+  padding: .5rem;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center; }
+
+.intro_header_paragraph {
+  color: white;
+  padding: .5rem;
+  line-height: 1.5; }
 
 .left_container {
   width: 50%;
@@ -55,7 +75,7 @@ body {
 .rocket_info_header, .rocket_seats_header {
   background: #231445;
   margin: 0;
-  padding: .5rem; }
+  padding: .4rem; }
 
 .left_container-active {
   left: 0; }
@@ -64,14 +84,16 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   margin: 0 auto;
-  background: url("../img/close.svg"); }
+  background: url("../img/test3.svg");
+  margin-top: .5rem; }
 
 .middle_container {
   width: 29rem;
   background: #A5ABC6 url("../img/background.jpg") no-repeat bottom;
   background-size: contain;
   position: relative;
-  height: 38rem; }
+  height: 38rem;
+  border-radius: .5rem; }
   .middle_container .statsAndTicketButton_container {
     display: flex;
     justify-content: space-between;
@@ -93,7 +115,7 @@ body {
     height: 100%; }
 
 .stats_button {
-  background: url("../img/info.svg") no-repeat center; }
+  background: url("../img/test1.svg") no-repeat center; }
 
 .ticket_button {
   background: url("../img/tickets.svg") no-repeat center; }
@@ -184,7 +206,8 @@ body {
   height: 3.5rem;
   width: 3.5rem;
   margin: 0 auto;
-  background: url("../img/close.svg"); }
+  background: url("../img/test3.svg");
+  margin-top: 1rem; }
 
 .right_container-active {
   right: 0; }
@@ -211,10 +234,15 @@ body {
   .nasa_news_container .nasa_news {
     border: 1px solid white;
     width: 96%;
+    height: 30%;
     display: none; }
+
+.news_of_mars {
+  margin: .5rem 0; }
 
 .nasa_news_nav_item {
   border: 1px solid white;
+  background: #231445;
   width: 33%;
   text-align: center;
   padding: .5rem; }
@@ -232,8 +260,8 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   left: 41.5%;
-  background: url("../img/close.svg") no-repeat center; }
+  background: url("../img/test3.svg") no-repeat center; }
 
 /*# sourceMappingURL=style.css.map */

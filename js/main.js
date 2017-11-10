@@ -3,22 +3,28 @@
 ///
 $(document).ready(() => {
 	// Api variables from NASA and NY Times
-	const nasaUrl = 'https://api.nasa.gov/planetary/apod?api_key=';
+	const nasaUrl = 'https://api.nasa.gov/planetary/apod?date=';
 	const nasaUrlTwo = 'http://crossorigin.me/https://api.nasa.gov/techport/api/items/10856.json?api_key=';
-	const apiKey = 'yt7WhJOrDXyKi63Q7jMDj8A59xyWfTgfdBqW11m8';
+	const apiKey = '&api_key=yt7WhJOrDXyKi63Q7jMDj8A59xyWfTgfdBqW11m8';
 	// Elements where Api JSON objects will be appended to
 	const picOfDay = $('#pic-of-day');
-	const picOfMars = $('#pic-of-mars');
+	const newsOfMars = $('#news-of-mars');
 	const picOfDayButton = $('#button-one');
 	const picOfMarsButton = $('#button-two');
+	const nasaImage = $('#nasa-image');
 	// Call back function returns a promise of a nasa JSON object
 	async function getData() {
+		let randYear = Math.floor(Math.random() * 18 + 2000);
+		let randMonth = Math.floor(Math.random()* 13);
+		let randDay = Math.floor(Math.random()* 30);
+		console.log(randYear);
 		try {
-			let response = await fetch(nasaUrl + apiKey);
+			let response = await fetch(`${nasaUrl}${randYear}-${randMonth}-${randDay}${apiKey}`);
 			if(response.ok) {
 				let jsonResponse = await response.json();
 				picOfDay.css('display', 'block');
-				picOfDay.append(`<img class='picOfDay-active' src='${jsonResponse.hdurl}'/>`);
+				picOfDay.css('height', '20rem');
+				nasaImage.attr('src', jsonResponse.hdurl);
 				console.log(jsonResponse);
 			}
 

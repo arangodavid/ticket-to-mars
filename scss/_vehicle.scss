@@ -4,6 +4,7 @@
 	background-size: contain;
 	position: relative;
 	height: 38rem;
+	border-radius: .5rem;
 	.statsAndTicketButton_container {
 		display: flex;
 		justify-content: space-between;
@@ -28,7 +29,7 @@
 	}
 }
 .stats_button {
-	background: url('../img/info.svg') no-repeat center;
+	background: url('../img/test1.svg') no-repeat center;
 }
 .ticket_button {
 	background: url('../img/tickets.svg') no-repeat center;

@@ -10,9 +10,15 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
+    <section class="intro">
+      <h1 class="intro_header">Ticket To Mars!</h1>
+      <p class="intro_header_paragraph">Choose your designated Space craft and travel the stars, check the stats of your Space craft and select how many tickets you want to buy for either Adult, Child, Senior or Pet! Don't forget to check out the news section where you can find the picture of the day, Mars news articles detailing current events on your destination and updates on near Earth Asteroids. When your ready buy your ticket and enjoy the animation! 
+      </p>
+    </section>
     <main class="root">
       <section class="rocket_container">
       <section id="stats" class="left_container">
@@ -36,10 +42,10 @@
 
         <section id="vehicle-container" class="vehicle_container">
           <section class="space_craft_container">
-            <img id="vehicle" class="space_craft" src="" />
+            <img id="vehicle" class="space_craft" src="" alt="Space Craft Vehicle"/>
           </section>
            <section class="landing_pad_container">
-            <img id="landing-pad" class="landing_pad" src="img/landingpad.svg"/>
+            <img id="landing-pad" class="landing_pad" src="img/landingpad.svg" alt="Space Craft Landing Pad"/>
           </section>
         </section>
 
@@ -50,13 +56,13 @@
 
         <form class="ticket_container">
           How many Children:
-          <input id="child" class="ticket_info" type="number">
+          <input id="child" class="ticket_info" type="number" min="0" max="10">
           How many Adults:
-          <input id="adult" class="ticket_info" type="number">
+          <input id="adult" class="ticket_info" type="number" min="0" max="10">
           How many Seniors
-          <input id="senior" class="ticket_info" type="number">
+          <input id="senior" class="ticket_info" type="number" min="0" max="10">
           How many pets if any:
-          <input id="pet" class="ticket_info" type="number">
+          <input id="pet" class="ticket_info" type="number" min="0" max="10">
         </form>
 
         <section class="ticket_total_container">
@@ -76,8 +82,13 @@
           <li id="button-two" class="nasa_news_nav_item">News2</li>
           <li id="button-three" class="nasa_news_nav_item">News3</li>
         </ul>
-        <section id="pic-of-day" class="nasa_news"></section>
-        <section id="pic-of-mars" class="nasa_news"></section>
+        <figure id="pic-of-day" class="nasa_news">
+          <img id="nasa-image" class="picOfDay-active" src=""/>
+          <figcaption id="nasa-image-description"></figcaption>
+          <small id="nasa-image-author"></small>
+          <small id="nasa-image-date"></small>
+        </figure>
+        <section id="news-of-mars" class="nasa_news news_of_mars"></section>
         <section class="nasa_news"></section>
         <section id="close-news-menu" class="close_news_menu"></section>
         
