@@ -24,6 +24,7 @@ $(document).ready(() => {
 				let jsonResponse = await response.json();
 				picOfDay.css('display', 'block');
 				picOfDay.css('height', '20rem');
+				picOfDay.css('margin', '0');
 				nasaImage.attr('src', jsonResponse.hdurl);
 				console.log(jsonResponse);
 			}
@@ -88,22 +89,22 @@ class SpaceCraft {
 				<li class ='seats_info_list'> Sorry this vehicle is full </li> `;
 		}else {
 			return `
-			<li class='seats_info_list'> This shuttle can hold ${amount} passengers </li>
-			<li class='seats_info_list'> There are ${onBoard} seats taken </li>
-			<li class='seats_info_list'> There are ${total} seats left </li> 
-			<li class='seats_info_list'> NOTE: Ticket prices fluxuate based on available seats </li> `;	
+			<li class='seats_info_list_item'> This shuttle can hold ${amount} passengers </li>
+			<li class='seats_info_list_item'> There are ${onBoard} seats taken </li>
+			<li class='seats_info_list_item'> There are ${total} seats left </li> 
+			<li class='seats_info_list_item'> NOTE: Ticket prices fluxuate based on available seats </li> `;	
 		}
 	}
 	// Returns general information on the vehicle
 	info() {
 		return `
-		<li class ='space_craft_info_list'>	Space Craft: ${this._model} </li>
-		<li class ='space_craft_info_list'>	Capacity: ${this._capacity} people </li>
-		<li class ='space_craft_info_list'>	Speed: ${this._speed}/mph </li>
-		<li class ='space_craft_info_list'>	Destination: Planet ${this._destination} </li>
-		<li class ='space_craft_info_list'>	Time To Mars: ${this._timeToMars} </li>
-		<li class = 'space_craft_info_list'> Ticket Price: $${this._price} </li>
-		<li class = 'space_craft_info_list'> NOTE: Children are 75% off, and Elderly are 15% off</li> `;
+		<li class ='space_craft_info_list_item'> Space Craft: ${this._model} </li>
+		<li class ='space_craft_info_list_item'> Capacity: ${this._capacity} people </li>
+		<li class ='space_craft_info_list_item'> Speed: ${this._speed}/mph </li>
+		<li class ='space_craft_info_list_item'> Destination: Planet ${this._destination} </li>
+		<li class ='space_craft_info_list_item'> Time To Mars: ${this._timeToMars} </li>
+		<li class = 'space_craft_info_list_item'> Ticket Price: $${this._price} </li>
+		<li class = 'space_craft_info_list_item'> NOTE: Children are 75% off, and Elderly are 15% off</li> `;
 	}
 };
 // Child class 
@@ -160,6 +161,8 @@ const buyButton = document.getElementById('purchase-button');
 const vehicleBackground = document.getElementById('vehicle-container'); 
 // Grabbed this element in order to change display property to none when user clicks the 'buy' button
 const landingPad = document.getElementById('landing-pad');
+
+const statsAndTicketButton_container = document.getElementById('statsAndTicketButton-container');
 // Grabbed this element in order to change display property to none when user clicks the 'buy' button
 const buttonContainer =  document.getElementById('button-container');
 // This button opens up the news menu located below the spaceCraft on the app
@@ -318,11 +321,13 @@ const toMars = () => {
 	const spaceLaunch = setTimeout(() => {
 		if(vehicle.style.visibility === 'visible') {
 			buttonContainer.style.display = 'none';
+			statsAndTicketButton_container.style.display = 'none';
+			openNewsMenuButton.style.display = 'none';
 			landingPad.style.visibility = 'hidden';
 			vehicleBackground.style.height = '100%';
-			vehicleBackground.style.background = `black url('file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/space.gif') no-repeat center`;
-			vehicle.style.transition = 'unset';
+			vehicleBackground.style.background = `black url('./img/space.gif') no-repeat center`;
 			vehicle.className = 'space_craft';
+			vehicle.style.display = 'none';
 		}else {
 			alert('Please choose a SpaceCraft');
 		}
@@ -331,6 +336,8 @@ const toMars = () => {
 // Call back function which slides the news menu up
 const newsSlideUp = () => {
 	newsMenuContainer.className = 'nasa_news_container nasa-news-container-active';
+	console.log('click');
+	console.log(newsMenuContainer.className);
 };
 // Call back function which slides down the news menu
 const newsClose = () => {

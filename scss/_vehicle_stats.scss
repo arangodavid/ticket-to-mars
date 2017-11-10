@@ -1,6 +1,5 @@
 .left_container {
 	width: 50%;
-	color: white;
 	padding: .25rem;
 	height: 38rem;
 	position: absolute;
@@ -8,24 +7,24 @@
 	background: linear-gradient(#A6ACC7, #221344);
 	transition: all .6s linear;
 	z-index: 1;
-	.rocket_info, .rocket_seats {
+	.rocket_info_header, .rocket_seats_header {
+		background: #231445;
+		margin: 0;
+		padding: .4rem;
+	}
+	.rocket_info_list, .rocket_seats_list {
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: space-between;
-		.space_craft_info_list, .seats_info_list {
+		.space_craft_info_list_item, .seats_info_list_item {
 			border: 1px solid white;
 			padding: .5rem;
 			text-align: left;
 		}
 	}
-}
-.rocket_info_header, .rocket_seats_header {
-	background: #231445;
-	margin: 0;
-	padding: .4rem;
 }
 .left_container-active {
 	left: 0;
@@ -35,5 +34,5 @@
 	height: 3.5rem;
 	margin: 0 auto;
 	background: url('../img/test3.svg');
-	margin-top: .5rem;
+	margin-top: 1rem;
 }

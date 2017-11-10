@@ -1,0 +1,12 @@
+.footer {
+	color: #FFF881;
+	width: 30%;
+	display: flex;
+	align-items: flex-end;
+	font-size: .8rem;
+	transform: translate(-10%, 0);
+	.author {
+		padding: .5rem;
+		background: #2980b9;
+	}
+}

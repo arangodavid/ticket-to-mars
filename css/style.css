@@ -11,48 +11,41 @@ body {
   padding-top: 5rem;
   background: #171D3C url("../img/test11.gif") no-repeat top right;
   display: flex;
-  flex-direction: row; }
-  body .intro {
-    border: 1px solid white;
-    width: 20%;
-    transform: translate(20%, 0); }
+  flex-direction: row;
+  justify-content: space-around;
+  color: white; }
   body .root {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
     width: 29%;
-    transform: translate(45.5%, 0);
-    color: white;
-    font-size: .8rem;
+    font-size: .7rem;
     padding: 2rem 1rem;
     border-radius: .5rem;
     background: linear-gradient(#A6ACC7, #221344);
     box-shadow: 0 0 .5rem #FFF881; }
     body .root .rocket_container {
       width: 100%;
-      height: 100%;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
       position: relative;
       overflow: hidden; }
 
-.intro_header {
-  border: 1px solid white;
-  margin: 0;
-  padding: .5rem;
-  color: white;
-  font-size: 1.5rem;
-  text-align: center; }
-
-.intro_header_paragraph {
-  color: white;
-  padding: .5rem;
-  line-height: 1.5; }
+.intro {
+  border: 2px solid white;
+  width: 20%; }
+  .intro .intro_header {
+    border: 1px solid white;
+    margin: 0;
+    padding: .5rem;
+    color: #FFF881;
+    font-size: 1.5rem;
+    text-align: center; }
+  .intro .intro_header_paragraph {
+    color: white;
+    padding: .5rem;
+    line-height: 1.5; }
 
 .left_container {
   width: 50%;
-  color: white;
   padding: .25rem;
   height: 38rem;
   position: absolute;
@@ -60,22 +53,21 @@ body {
   background: linear-gradient(#A6ACC7, #221344);
   transition: all .6s linear;
   z-index: 1; }
-  .left_container .rocket_info, .left_container .rocket_seats {
+  .left_container .rocket_info_header, .left_container .rocket_seats_header {
+    background: #231445;
+    margin: 0;
+    padding: .4rem; }
+  .left_container .rocket_info_list, .left_container .rocket_seats_list {
     margin: 0;
     padding: 0;
     list-style-type: none;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between; }
-    .left_container .rocket_info .space_craft_info_list, .left_container .rocket_info .seats_info_list, .left_container .rocket_seats .space_craft_info_list, .left_container .rocket_seats .seats_info_list {
+    .left_container .rocket_info_list .space_craft_info_list_item, .left_container .rocket_info_list .seats_info_list_item, .left_container .rocket_seats_list .space_craft_info_list_item, .left_container .rocket_seats_list .seats_info_list_item {
       border: 1px solid white;
       padding: .5rem;
       text-align: left; }
-
-.rocket_info_header, .rocket_seats_header {
-  background: #231445;
-  margin: 0;
-  padding: .4rem; }
 
 .left_container-active {
   left: 0; }
@@ -85,73 +77,48 @@ body {
   height: 3.5rem;
   margin: 0 auto;
   background: url("../img/test3.svg");
-  margin-top: .5rem; }
+  margin-top: 1rem; }
 
 .middle_container {
   width: 29rem;
   background: #A5ABC6 url("../img/background.jpg") no-repeat bottom;
   background-size: contain;
-  position: relative;
   height: 38rem;
-  border-radius: .5rem; }
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
   .middle_container .statsAndTicketButton_container {
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     position: absolute;
-    width: 100%;
-    top: 20%; }
+    top: 5%; }
   .middle_container .button_container {
-    width: 100%;
     padding: 0 .5rem;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 50%; }
+    justify-content: space-between; }
   .middle_container .vehicle_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    height: 100%; }
+    justify-content: flex-end; }
 
-.stats_button {
-  background: url("../img/test1.svg") no-repeat center; }
+.stats_button_container {
+  width: 25%; }
+  .stats_button_container .stats_button {
+    background: url("../img/test1.svg") no-repeat center; }
 
-.ticket_button {
-  background: url("../img/tickets.svg") no-repeat center; }
+.tickets_button_container {
+  width: 25%; }
+  .tickets_button_container .ticket_button {
+    background: url("../img/tickets.svg") no-repeat center;
+    float: right; }
 
 .stats_button, .ticket_button {
-  width: 5rem;
+  width: 100%;
   height: 4rem; }
-
-.space_craft_container {
-  width: 24%;
-  height: 7rem; }
-  .space_craft_container .space_craft {
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-    display: block;
-    transform: translate(0, 9%);
-    transition: all 2s linear; }
-  .space_craft_container .space_craft_takeOff {
-    transform: translate(0, -400%); }
-
-.landing_pad_container {
-  width: 24%;
-  height: 7rem; }
-  .landing_pad_container .landing_pad {
-    width: 100%;
-    height: 100%;
-    transform: translate(0, -20%); }
-
-.news_menu {
-  width: 3.5rem;
-  height: 3.5rem;
-  position: absolute;
-  bottom: 1%;
-  left: 44%;
-  background: url("../img/newsmenu.svg") no-repeat center; }
 
 .left_selection, .right_selection {
   border-radius: 50%;
@@ -167,6 +134,34 @@ body {
 .right_selection {
   background: url("../img/jupiter.svg"); }
 
+.space_craft_container {
+  width: 24%;
+  height: 7rem; }
+  .space_craft_container .space_craft {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    display: block;
+    transition: all 2s linear;
+    transform: translate(0, 63%); }
+  .space_craft_container .space_craft_takeOff {
+    transform: translate(0, -400%); }
+
+.landing_pad_container {
+  width: 24%;
+  height: 7rem; }
+  .landing_pad_container .landing_pad {
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 33%); }
+
+.news_menu {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: url("../img/newsmenu.svg");
+  transform: translate(360%, 0); }
+
 .right_container {
   width: 50%;
   height: 38rem;
@@ -176,10 +171,8 @@ body {
   background: linear-gradient(#A6ACC7, #221344);
   transition: all .6s linear;
   z-index: 1; }
-  .right_container .ticket_container {
-    border: 1px solid white; }
-    .right_container .ticket_container .ticket_info {
-      width: 100%; }
+  .right_container .ticket_container .ticket_info {
+    width: 100%; }
 
 .ticket_total_container {
   border: 1px solid white; }
@@ -209,9 +202,6 @@ body {
   background: url("../img/test3.svg");
   margin-top: 1rem; }
 
-.right_container-active {
-  right: 0; }
-
 .nasa_news_container {
   border: 1px solid white;
   width: 100%;
@@ -231,27 +221,14 @@ body {
     list-style-type: none;
     padding: 0;
     margin-top: 0; }
-  .nasa_news_container .nasa_news {
-    border: 1px solid white;
-    width: 96%;
-    height: 30%;
-    display: none; }
-
-.news_of_mars {
-  margin: .5rem 0; }
-
-.nasa_news_nav_item {
-  border: 1px solid white;
-  background: #231445;
-  width: 33%;
-  text-align: center;
-  padding: .5rem; }
-  .nasa_news_nav_item:hover, .nasa_news_nav_item:active {
-    cursor: pointer; }
-
-.picOfDay-active {
-  width: 100%;
-  height: 100%; }
+    .nasa_news_container .nasa_news_nav .nasa_news_nav_item {
+      border: 1px solid white;
+      background: #231445;
+      width: 33%;
+      text-align: center;
+      padding: .5rem; }
+      .nasa_news_container .nasa_news_nav .nasa_news_nav_item:hover, .nasa_news_container .nasa_news_nav .nasa_news_nav_item:active {
+        cursor: pointer; }
 
 .nasa-news-container-active {
   top: 0; }
@@ -263,5 +240,29 @@ body {
   bottom: 5%;
   left: 41.5%;
   background: url("../img/test3.svg") no-repeat center; }
+
+.nasa_news {
+  border: 1px solid white;
+  width: 96%;
+  height: 30%;
+  display: none; }
+
+.picOfDay-active {
+  width: 99.9%;
+  height: 100%; }
+
+.news_of_mars {
+  margin: .5rem 0; }
+
+.footer {
+  color: #FFF881;
+  width: 30%;
+  display: flex;
+  align-items: flex-end;
+  font-size: .8rem;
+  transform: translate(-10%, 0); }
+  .footer .author {
+    padding: .5rem;
+    background: #2980b9; }
 
 /*# sourceMappingURL=style.css.map */
