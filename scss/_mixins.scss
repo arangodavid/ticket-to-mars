@@ -1,0 +1,15 @@
+@mixin move ($x, $y) {
+	-webkit-transform: translate($x, $y);
+	    -ms-transform: translate($x, $y);
+	        transform: translate($x, $y);
+}
+@mixin positionLayoutTop($position, $top, $left ) {
+	position: $position;
+	top: $top;
+	left: $left;
+}
+@mixin positionLayoutBottom($position, $bottom, $left ) {
+	position: $position;
+	bottom: $bottom;
+	left: $left;
+}
