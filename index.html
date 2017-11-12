@@ -14,94 +14,96 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
+    <section class="root">
     <section class="intro">
       <h1 class="intro_header">Ticket To Mars!</h1>
       <p class="intro_header_paragraph">Choose your designated Space craft and travel the stars, check the stats of your Space craft and select how many tickets you want to buy for either Adult, Child, Senior or Pet! Don't forget to check out the news section where you can find the picture of the day, Mars news articles detailing current events on your destination and updates on near Earth Asteroids. When your ready buy your ticket and enjoy the animation! 
       </p>
     </section>
-    <main class="root">
+    <main class="app_container">
       <section class="rocket_container">
-      <section id="stats" class="left_container">
-        <h3 class="rocket_info_header">Vehicle Stats</h3>
-        <ul id="rocket-info" class="rocket_info_list"></ul>
-        <h3 class="rocket_seats_header">Vehicle Seats</h3>
-        <ul id="rocket-seats" class="rocket_seats_list"></ul>
-        <section id="close-stats" class="close_stats"></section>
-      </section>
-      
-      <section class="middle_container">
-        <section id="statsAndTicketButton-container" class="statsAndTicketButton_container">
-          <section class="stats_button_container">
-            Check Space Craft Stats!
-            <section id="open-stats" class="stats_button"></section>
-          </section>
-          <section class="tickets_button_container">
-            Check Your Tickets!
-            <section id="open-tickets" class="ticket_button"></section>
-          </section>
+        <section id="stats" class="left_container">
+          <h3 class="rocket_info_header">Vehicle Stats</h3>
+          <ul id="rocket-info" class="rocket_info_list"></ul>
+          <h3 class="rocket_seats_header">Vehicle Seats</h3>
+          <ul id="rocket-seats" class="rocket_seats_list"></ul>
+          <section id="close-stats" class="close_stats"></section>
         </section>
-
-        <section id="button-container" class="button_container">
-          <button id="left-selection" class="left_selection"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
-          <button id="right-selection" class="right_selection"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
-        </section>
-
-        <section id="vehicle-container" class="vehicle_container">
-          <section class="space_craft_container">
-            <img id="vehicle" class="space_craft" src="" alt="Space Craft Vehicle"/>
-          </section>
-           <section class="landing_pad_container">
-            <img id="landing-pad" class="landing_pad" src="img/landingpad.svg" alt="Space Craft Landing Pad"/>
-          </section>
-        </section>
-
-        <section id="news-menu" class="news_menu"></section>
-      </section>
-      
-      <section id="right-container" class="right_container">
-
-        <form class="ticket_container">
-          How many Children:
-          <input id="child" class="ticket_info" type="number" min="0" max="10">
-          How many Adults:
-          <input id="adult" class="ticket_info" type="number" min="0" max="10">
-          How many Seniors
-          <input id="senior" class="ticket_info" type="number" min="0" max="10">
-          How many pets if any:
-          <input id="pet" class="ticket_info" type="number" min="0" max="10">
-        </form>
-
-        <section class="ticket_total_container">
-          <button id="submit">Submit</button>
-          <h3 class="ticket_total_header">Total</h3>
-          <ul id="total" class="total_price"></ul>
-          <button id="purchase-button" class="purchase_button">buy</button>
-        </section>
-
-        <section id="close-tickets" class="close_tickets"></section>
-      </section>
-
-      <section id="nasa-news-container" class="nasa_news_container">
-
-        <ul class="nasa_news_nav">
-          <li id="button-one" class="nasa_news_nav_item">Picture of the Day</li>
-          <li id="button-two" class="nasa_news_nav_item">News2</li>
-          <li id="button-three" class="nasa_news_nav_item">News3</li>
-        </ul>
-        <section id="nasa-news-section-one" class="nasa_news">
-        </section>
-        <section id="nasa-news-section-two" class="nasa_news nasa_news_section_two"></section>
-        <section id="nasa-news-section-three" class="nasa_news nasa_news_section_three"></section>
-        <section id="close-news-menu" class="close_news_menu"></section>
         
+        <section class="middle_container">
+          <section id="statsAndTicketButton-container" class="statsAndTicketButton_container">
+            <section class="stats_button_container">
+              Check Space Craft Stats!
+              <section id="open-stats" class="stats_button"></section>
+            </section>
+            <section class="tickets_button_container">
+              Check Your Tickets!
+              <section id="open-tickets" class="ticket_button"></section>
+            </section>
+          </section>
+
+          <section id="button-container" class="button_container">
+            <button id="left-selection" class="left_selection"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+            <button id="right-selection" class="right_selection"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+          </section>
+
+          <section id="vehicle-container" class="vehicle_container">
+            <section class="space_craft_container">
+              <img id="vehicle" class="space_craft" src="" alt="Space Craft Vehicle"/>
+            </section>
+             <section class="landing_pad_container">
+              <img id="landing-pad" class="landing_pad" src="img/landingpad.svg" alt="Space Craft Landing Pad"/>
+            </section>
+          </section>
+
+          <section id="news-menu" class="news_menu"></section>
+        </section>
+        
+        <section id="right-container" class="right_container">
+
+          <form class="ticket_container">
+            How many Children:
+            <input id="child" class="ticket_info" type="number" min="0" max="10">
+            How many Adults:
+            <input id="adult" class="ticket_info" type="number" min="0" max="10">
+            How many Seniors
+            <input id="senior" class="ticket_info" type="number" min="0" max="10">
+            How many pets if any:
+            <input id="pet" class="ticket_info" type="number" min="0" max="10">
+          </form>
+
+          <section class="ticket_total_container">
+            <button id="submit">Submit</button>
+            <h3 class="ticket_total_header">Total</h3>
+            <ul id="total" class="total_price"></ul>
+            <button id="purchase-button" class="purchase_button">buy</button>
+          </section>
+
+          <section id="close-tickets" class="close_tickets"></section>
+        </section>
+
+        <section id="nasa-news-container" class="nasa_news_container">
+
+          <ul class="nasa_news_nav">
+            <li id="button-one" class="nasa_news_nav_item">Picture of the Day</li>
+            <li id="button-two" class="nasa_news_nav_item">News2</li>
+            <li id="button-three" class="nasa_news_nav_item">News3</li>
+          </ul>
+          <section id="nasa-news-section-one" class="nasa_news">
+          </section>
+          <section id="nasa-news-section-two" class="nasa_news nasa_news_section_two"></section>
+          <section id="nasa-news-section-three" class="nasa_news nasa_news_section_three"></section>
+          <section id="close-news-menu" class="close_news_menu"></section>
+          
+        </section>
       </section>
-    </section>
-    </main>
-    <footer class="footer">
-      <small class="author">&copy; All Rights Reserved. Program Designed and Developed by David Arango.</small>
-    </footer>
+      </main>
+      <footer class="footer">
+        <small class="author">&copy; All Rights Reserved. Program Designed and Developed by David Arango.</small>
+      </footer>
       <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
       <script src="js/main.js"></script>
+    </section>
   </body>
 </html>

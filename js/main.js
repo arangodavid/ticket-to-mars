@@ -295,16 +295,16 @@ class Ticket {
 	get pets() {
 		return this._pets;
 	}
-	//File/Form Handler fucntion has a conditional which checks to see what aircraft should be assigned what price
+	//File/Form Handler function has a conditional which checks to see what aircraft should be assigned what price, issue with absolue path had to check for both local and remote gh-pages
 	ticketPrice(numOfChild, numOfAdult, numOfSenior, numOfPet) {
 		let type = 0;
-		if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/apolloEleven.svg') {
+		if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/apolloEleven.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/apolloEleven.svg') {
 			type = 2000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
-		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/spaceShuttle.svg'){
+		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/spaceShuttle.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/spaceShuttle.svg'){
 			type = 5000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
-		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/ufo.svg') {
+		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/ufo.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/ufo.svg') {
 			type = 10000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
 		}else {
