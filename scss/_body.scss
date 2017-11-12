@@ -8,13 +8,15 @@ html {
 body {
 	padding: 0;
 	margin: 0;
+}
+.root {
 	padding-top: 5rem;
 	background: #171D3C url('../img/test11.gif') no-repeat top right;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	color: white;
-	.root {
+	.app_container {
 		width: 29%;
 		font-size: .7rem;
 		padding: 2rem 1rem;
@@ -31,6 +33,7 @@ body {
 		}
 	}
 }
+
 .intro {
 	border: 2px solid white;
 	width: 20%;

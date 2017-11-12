@@ -40,7 +40,6 @@ $(document).ready(() => {
 				nasaNewsSectionOne.append(`<span class="nasa_image_date">Date: ${JSON.stringify(jsonResponse.date)}</span>`);
 				console.log(jsonResponse);
 			}
-
 		}catch(error){
 			console.log(error);
 		}
@@ -64,19 +63,19 @@ $(document).ready(() => {
 				nasaNewsSectionThree.empty();
 				// Attempted an .each() method here but started blocking when trying to give each section a different number in order to get different articles, bc each article section was getting the same article
 				// This section appends article headline, img, and author based on random numbers to get diferrent articles
-				nasaNewsSectionOne.append(JSON.stringify(jsonResponse.response.docs[randNewsOne].headline.main));
 				nasaNewsSectionOne.append(`<img src='https://static01.nyt.com/${jsonResponse.response.docs[randNewsOne].multimedia[2].url}'/>`);
-				nasaNewsSectionOne.append(JSON.stringify(jsonResponse.response.docs[randNewsOne].snippet));
+				nasaNewsSectionOne.append(`<p>${jsonResponse.response.docs[randNewsOne].headline.main}</p>`);
+				nasaNewsSectionOne.append(`<p>${jsonResponse.response.docs[randNewsOne].snippet}</p>`);
 				nasaNewsSectionOne.append(`<a href='${jsonResponse.response.docs[randNewsOne].web_url}' target='_blank'>Read Full Article</a>`);
 				
-				nasaNewsSectionTwo.append(JSON.stringify(jsonResponse.response.docs[randNewsTwo].headline.main));
 				nasaNewsSectionTwo.append(`<img src='https://static01.nyt.com/${jsonResponse.response.docs[randNewsTwo].multimedia[2].url}'/>`);
-				nasaNewsSectionTwo.append(JSON.stringify(jsonResponse.response.docs[randNewsTwo].snippet));
+				nasaNewsSectionTwo.append(`<p>${jsonResponse.response.docs[randNewsTwo].headline.main}</p>`);
+				nasaNewsSectionTwo.append(`<p>${jsonResponse.response.docs[randNewsTwo].snippet}</p>`);
 				nasaNewsSectionTwo.append(`<a href='${jsonResponse.response.docs[randNewsTwo].web_url}' target='_blank'>Read Full Article</a>`);
 				
-				nasaNewsSectionThree.append(JSON.stringify(jsonResponse.response.docs[randNewsThree].headline.main));
 				nasaNewsSectionThree.append(`<img src='https://static01.nyt.com/${jsonResponse.response.docs[randNewsThree].multimedia[2].url}'/>`);
-				nasaNewsSectionThree.append(JSON.stringify(jsonResponse.response.docs[randNewsThree].snippet));
+				nasaNewsSectionThree.append(`<p>${jsonResponse.response.docs[randNewsThree].headline.main}</p>`);
+				nasaNewsSectionThree.append(`<p>${jsonResponse.response.docs[randNewsThree].snippet}</p>`);
 				nasaNewsSectionThree.append(`<a href='${jsonResponse.response.docs[randNewsThree].web_url}' target='_blank'>Read Full Article</a>`);
 				console.log(jsonResponse);
 			}
