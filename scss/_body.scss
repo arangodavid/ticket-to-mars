@@ -8,10 +8,11 @@ html {
 body {
 	padding: 0;
 	margin: 0;
+	background: #171D3C;
 }
 .root {
 	padding-top: 5rem;
-	background: #171D3C url('../img/test11.gif') no-repeat top right;
+	background: url('../img/test11.gif') no-repeat top right;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
