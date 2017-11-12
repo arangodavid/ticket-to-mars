@@ -4,14 +4,19 @@
 $(document).ready(() => {
 	// Api variables from NASA and NY Times
 	const nasaUrl = 'https://api.nasa.gov/planetary/apod?date=';
-	const nasaUrlTwo = 'http://crossorigin.me/https://api.nasa.gov/techport/api/items/10856.json?api_key=';
-	const apiKey = '&api_key=yt7WhJOrDXyKi63Q7jMDj8A59xyWfTgfdBqW11m8';
+	const nasaApiKey = '&api_key=yt7WhJOrDXyKi63Q7jMDj8A59xyWfTgfdBqW11m8';
+	const nyTimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?';
+	// Object to be serialized
+	const nyTimesObject = {
+		'api-key': '73d2a5492ce44f61831079284d29babc',
+		'q': 'space mars'
+	};
 	// Elements where Api JSON objects will be appended to
-	const picOfDay = $('#pic-of-day');
-	const newsOfMars = $('#news-of-mars');
 	const picOfDayButton = $('#button-one');
 	const picOfMarsButton = $('#button-two');
-	const nasaImage = $('#nasa-image');
+	const nasaNewsSectionOne = $('#nasa-news-section-one');
+	const nasaNewsSectionTwo = $('#nasa-news-section-two');
+	const nasaNewsSectionThree = $('#nasa-news-section-three');
 	// Call back function returns a promise of a nasa JSON object
 	async function getData() {
 		let randYear = Math.floor(Math.random() * 18 + 2000);
@@ -19,13 +24,20 @@ $(document).ready(() => {
 		let randDay = Math.floor(Math.random()* 30);
 		console.log(randYear);
 		try {
-			let response = await fetch(`${nasaUrl}${randYear}-${randMonth}-${randDay}${apiKey}`);
+			let response = await fetch(`${nasaUrl}${randYear}-${randMonth}-${randDay}${nasaApiKey}`);
 			if(response.ok) {
 				let jsonResponse = await response.json();
-				picOfDay.css('display', 'block');
-				picOfDay.css('height', '20rem');
-				picOfDay.css('margin', '0');
-				nasaImage.attr('src', jsonResponse.hdurl);
+				$('.nasa_news').css('display', 'none');
+				nasaNewsSectionOne.empty();
+				nasaNewsSectionOne.fadeIn(3000);
+				nasaNewsSectionOne.css('display', 'block');
+				nasaNewsSectionOne.css('height', '30rem');
+				nasaNewsSectionOne.css('margin', '0');
+				nasaNewsSectionOne.append(`<h2>Title: ${JSON.stringify(jsonResponse.title)}</h2>`);
+				nasaNewsSectionOne.append(` <img id="nasa-news-section-one-image" class="nasa_news_section_one_image_active" src="${jsonResponse.hdurl}"/>`);
+				$('#nasa-news-section-one-image').css('height', '60%');
+				nasaNewsSectionOne.append(`<figcaption class="nasa_image_description">Description: ${JSON.stringify(jsonResponse.title)}</figcaption>`);
+				nasaNewsSectionOne.append(`<span class="nasa_image_date">Date: ${JSON.stringify(jsonResponse.date)}</span>`);
 				console.log(jsonResponse);
 			}
 
@@ -35,10 +47,37 @@ $(document).ready(() => {
 	};
 	// Call back function returns a promise of a NY Times JSON object
 	async function getDataTwo() {
+		let randNewsOne = Math.floor(Math.random() * 9);
+		let randNewsTwo = Math.floor(Math.random() * 9);
+		let randNewsThree = Math.floor(Math.random() * 9);
 		try {
-			let response = await fetch(nasaUrlTwo + apiKey);
+			// Tells the program to keep moving throught the request query until it returns a promise and saves the promise to the variable response
+			// $.param(); serializes and object or array to be compatible for URL query string or AJAX request
+			let response = await fetch(nyTimesUrl + $.param( nyTimesObject ));
 			if(response.ok) {
 				let jsonResponse = await response.json();
+				$('.nasa_news').fadeIn(3000);
+				$('.nasa_news').css('display', 'block');
+				nasaNewsSectionOne.css('height', '30%');
+				nasaNewsSectionOne.empty();
+				nasaNewsSectionTwo.empty();
+				nasaNewsSectionThree.empty();
+				// Attempted an .each() method here but started blocking when trying to give each section a different number in order to get different articles, bc each article section was getting the same article
+				// This section appends article headline, img, and author based on random numbers to get diferrent articles
+				nasaNewsSectionOne.append(JSON.stringify(jsonResponse.response.docs[randNewsOne].headline.main));
+				nasaNewsSectionOne.append(`<img src='https://static01.nyt.com/${jsonResponse.response.docs[randNewsOne].multimedia[2].url}'/>`);
+				nasaNewsSectionOne.append(JSON.stringify(jsonResponse.response.docs[randNewsOne].snippet));
+				nasaNewsSectionOne.append(`<a href='${jsonResponse.response.docs[randNewsOne].web_url}' target='_blank'>Read Full Article</a>`);
+				
+				nasaNewsSectionTwo.append(JSON.stringify(jsonResponse.response.docs[randNewsTwo].headline.main));
+				nasaNewsSectionTwo.append(`<img src='https://static01.nyt.com/${jsonResponse.response.docs[randNewsTwo].multimedia[2].url}'/>`);
+				nasaNewsSectionTwo.append(JSON.stringify(jsonResponse.response.docs[randNewsTwo].snippet));
+				nasaNewsSectionTwo.append(`<a href='${jsonResponse.response.docs[randNewsTwo].web_url}' target='_blank'>Read Full Article</a>`);
+				
+				nasaNewsSectionThree.append(JSON.stringify(jsonResponse.response.docs[randNewsThree].headline.main));
+				nasaNewsSectionThree.append(`<img src='https://static01.nyt.com/${jsonResponse.response.docs[randNewsThree].multimedia[2].url}'/>`);
+				nasaNewsSectionThree.append(JSON.stringify(jsonResponse.response.docs[randNewsThree].snippet));
+				nasaNewsSectionThree.append(`<a href='${jsonResponse.response.docs[randNewsThree].web_url}' target='_blank'>Read Full Article</a>`);
 				console.log(jsonResponse);
 			}
 		}catch(error) {
@@ -161,7 +200,7 @@ const buyButton = document.getElementById('purchase-button');
 const vehicleBackground = document.getElementById('vehicle-container'); 
 // Grabbed this element in order to change display property to none when user clicks the 'buy' button
 const landingPad = document.getElementById('landing-pad');
-
+// Grabbed this element in order to hide it when space craft animation is true
 const statsAndTicketButton_container = document.getElementById('statsAndTicketButton-container');
 // Grabbed this element in order to change display property to none when user clicks the 'buy' button
 const buttonContainer =  document.getElementById('button-container');
@@ -175,13 +214,13 @@ const closeNewsMenuButton = document.getElementById('close-news-menu');
 const openStatsButton = document.getElementById('open-stats');
 // Grabbed this element to append and remove class that allows transition affect
 const closeStatsButton = document.getElementById('close-stats');
-
+// Grabbed this element to add classes which allows it to slide up and down when clicked
 const statsContainer = document.getElementById('stats');
-
+// This element listens for a callback function to open tickets menu
 const openTicketButton = document.getElementById('open-tickets');
-
+// This element listens for a callback function to close tickets menu
 const closeTicketButton = document.getElementById('close-tickets');
-
+// Grabbed this element in order to close the tickets button when buy button is clicked in order to see animation into space
 const ticketContainer = document.getElementById('right-container');
 
 let infoCounter = -1;
@@ -361,7 +400,6 @@ const openTickets = () => {
 const closeTickets = () => {
 	ticketContainer.className = 'right_container';
 };
-
 // Event Listeners
 rightButton.addEventListener('click', selectVehicleRight);
 leftButton.addEventListener('click', selectVehicleLeft);

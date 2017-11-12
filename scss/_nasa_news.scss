@@ -35,10 +35,8 @@
 .close_news_menu {
 	width: 3.5rem;
 	height: 3.5rem;
-	position: absolute;
-	bottom: 5%;
-	left: 41.5%;
 	background: url('../img/test3.svg') no-repeat center;
+	margin-top: .5rem;
 }
 .nasa_news {
 	border: 1px solid white;
@@ -46,10 +44,10 @@
 	height: 30%;
 	display: none;
 }
-.picOfDay-active {
+.nasa_news_section_one_image_active {
 	width: 99.9%;
 	height: 100%;
 }
-.news_of_mars {
+.nasa_news_section_two {
 	margin: .5rem 0;
 }
