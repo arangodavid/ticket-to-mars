@@ -2,7 +2,7 @@
 	width: 29rem;
 	background: #A5ABC6 url('../img/background.jpg') no-repeat bottom;
 	background-size: contain;
-	height: 38rem;
+	height: 30rem;
 	border-radius: .5rem;
 	display: flex;
 	flex-direction: column;
@@ -21,6 +21,7 @@
 		justify-content: space-between;
 	}
 	.vehicle_container {
+		height: 8rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -28,16 +29,18 @@
 	}
 }
 .stats_button_container {
-	width: 25%;
+	width: 30%;
 	.stats_button {
 		background: url('../img/test1.svg') no-repeat center;
+		height: 3rem;
 	}
 }
 .tickets_button_container {
-	width: 25%;
+	width: 30%;
 	.ticket_button {
 		background: url('../img/tickets.svg') no-repeat center;
 		float: right;
+		height: 3rem;
 
 	}
 }
@@ -47,8 +50,8 @@
 }
 .left_selection, .right_selection {
 	border-radius: 50%;
-	height: 5rem;
-	width: 5rem;
+	height: 3.5rem;
+	width: 3.5rem;
 	border: 2px outset light-gray;
 	.fa {
 		color: white;
@@ -69,7 +72,7 @@
 			visibility: hidden;
 			display: block;
 			transition: all 2s linear;
-			transform: translate(0, 63%);
+			transform: translate(0, 86%);
 	}
 		.space_craft_takeOff {
 			transform: translate(0, -400%);
@@ -81,7 +84,7 @@
 	.landing_pad {
 		width: 100%;
 		height: 100%;
-		transform: translate(0, 33%);
+		transform: translate(0, 44%);
 	}
 }
 .news_menu {
@@ -89,5 +92,5 @@
 	width: 3.5rem;
 	height: 3.5rem;
 	background: url('../img/newsmenu.svg');
-	transform: translate(360%, 0);
+	transform: translate(274%, 0);
 }

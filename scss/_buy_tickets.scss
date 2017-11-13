@@ -1,6 +1,6 @@
 .right_container {
 	width: 50%;
-	height: 38rem;
+	height: 30rem;
 	padding: .25rem;
 	position: absolute;
 	right: -51%;
@@ -22,7 +22,7 @@
 	}
 	.total_price {
 		border: 1px solid white;
-		height: 17rem;
+		height: 11.5rem;
 		padding: 0;
 	}
 	.purchase_button {
@@ -39,9 +39,9 @@
 	right: 0;
 }
 .close_tickets {
-	height: 3.5rem;
-	width: 3.5rem;
+	height: 2rem;
+	width: 2rem;
 	margin: 0 auto;
-	background: url('../img/test3.svg');
+	background: url('../img/test3.svg') no-repeat center;
 	margin-top: 1rem;
 }

@@ -1,7 +1,7 @@
 .left_container {
 	width: 50%;
 	padding: .25rem;
-	height: 38rem;
+	height: 30rem;
 	position: absolute;
 	left: -51%;
 	background: linear-gradient(#A6ACC7, #221344);
@@ -19,6 +19,7 @@
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: space-between;
+		font-size: .54rem;
 		.space_craft_info_list_item, .seats_info_list_item {
 			border: 1px solid white;
 			padding: .5rem;
@@ -30,9 +31,9 @@
 	left: 0;
 }
 .close_stats {
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 2rem;
+	height: 2rem;
 	margin: 0 auto;
-	background: url('../img/test3.svg');
+	background: url('../img/test3.svg') no-repeat center;
 	margin-top: 1rem;
 }

@@ -1,7 +1,7 @@
 .nasa_news_container {
 	border: 1px solid white;
 	width: 100%;
-	height: 38rem;
+	height: 30rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -33,8 +33,8 @@
 	top: 0;
 }
 .close_news_menu {
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 2rem;
+	height: 2rem;
 	background: url('../img/test3.svg') no-repeat center;
 	margin-top: .5rem;
 }
@@ -46,6 +46,7 @@
 	padding: .25rem;
 }
 .nytimes_articles {
+	float: right;
 }
 .nasa_news_section_one_image_active {
 	width: 99.9%;

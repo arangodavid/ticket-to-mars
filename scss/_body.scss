@@ -11,12 +11,14 @@ body {
 	background: #171D3C;
 }
 .root {
-	padding-top: 5rem;
+	padding: 3rem 0;
 	background: url('../img/test11.gif') no-repeat top right;
+	background-size: 44%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	color: white;
+	border: 5px solid yellow;
 	.app_container {
 		width: 29%;
 		font-size: .7rem;
