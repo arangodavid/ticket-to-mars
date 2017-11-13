@@ -17,8 +17,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  color: white;
-  border: 5px solid yellow; }
+  color: white; }
   .root .app_container {
     width: 29%;
     font-size: .7rem;
@@ -189,7 +188,6 @@ body {
     margin: 0;
     text-align: center; }
   .ticket_total_container .total_price {
-    border: 1px solid white;
     height: 11.5rem;
     padding: 0; }
   .ticket_total_container .purchase_button {
@@ -199,7 +197,8 @@ body {
 .total_price_info {
   border: 1px solid white;
   list-style-type: none;
-  padding: .5rem; }
+  padding: .5rem;
+  font-size: .5rem; }
 
 .right_container-active {
   right: 0; }

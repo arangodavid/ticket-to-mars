@@ -213,7 +213,7 @@ const closeNewsMenuButton = document.getElementById('close-news-menu');
 const openStatsButton = document.getElementById('open-stats');
 // Grabbed this element to append and remove class that allows transition affect
 const closeStatsButton = document.getElementById('close-stats');
-// Grabbed this element to add classes which allows it to slide up and down when clicked
+// Grabbed this element to add classes which allows it to slide left and right when clicked
 const statsContainer = document.getElementById('stats');
 // This element listens for a callback function to open tickets menu
 const openTicketButton = document.getElementById('open-tickets');
@@ -297,13 +297,13 @@ class Ticket {
 	//File/Form Handler function has a conditional which checks to see what aircraft should be assigned what price, issue with absolue path had to check for both local and remote gh-pages
 	ticketPrice(numOfChild, numOfAdult, numOfSenior, numOfPet) {
 		let type = 0;
-		if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/apolloEleven.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/apolloEleven.svg') {
+		if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/tickettomars/img/apolloEleven.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/apolloEleven.svg') {
 			type = 2000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
-		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/spaceShuttle.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/spaceShuttle.svg'){
+		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/tickettomars/img/spaceShuttle.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/spaceShuttle.svg'){
 			type = 5000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
-		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/ticket-to-mars/img/ufo.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/ufo.svg') {
+		}else if(vehicle.src === 'file:///Users/davidarango/Desktop/my-work/tickettomars/img/ufo.svg' || vehicle.src === 'https://arangodavid.github.io/ticket-to-mars/img/ufo.svg') {
 			type = 10000;
 			this.print(numOfChild, numOfAdult, numOfSenior, numOfPet, type);
 		}else {
@@ -355,6 +355,7 @@ const printTicket = () => {
 // Call back function to animate spaceCraft upon buying ticket
 const toMars = () => {
 	ticketContainer.className = 'right_container';
+	statsContainer.className = 'left_container';
 	vehicle.className = 'space_craft space_craft_takeOff';
 	const spaceLaunch = setTimeout(() => {
 		if(vehicle.style.visibility === 'visible') {
